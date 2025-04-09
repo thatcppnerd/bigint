@@ -14,9 +14,9 @@ add_library(bigint STATIC ${BIGINT_HEADERS} ${BIGINT_SRC})
 
 
 # Quick Commit Local
-if(TARGET qcl)
+if(NOT TARGET qcl)
 
-    add_custom_command(qcl
+    add_custom_target(qcl
         COMMAND git add .
         COMMAND git commit -m "Quick Commit"
         COMMAND git gc
@@ -26,9 +26,9 @@ if(TARGET qcl)
 endif()
 
 # Quick Commit
-if(TARGET qc)
+if(NOT TARGET qc)
 
-    add_custom_command(qc
+    add_custom_target(qc
         COMMAND git push 
         VERBATIM
         DEPENDS qcl
