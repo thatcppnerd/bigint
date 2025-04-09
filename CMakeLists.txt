@@ -17,8 +17,7 @@ add_library(bigint STATIC ${BIGINT_HEADERS} ${BIGINT_SRC})
 if(NOT TARGET qcl)
 
     add_custom_target(qcl
-        COMMAND git add .
-        COMMAND git commit -m "Quick Commit"
+        COMMAND git commit -a -m "Quick Commit"
         COMMAND git gc
         VERBATIM
     )
