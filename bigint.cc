@@ -20,6 +20,7 @@ void __bigint_common<__num_blocks, __block_t, __sign_enable>::operator+=(const b
     {
         blocks[i] += val;
 
+        // check if overflow happened
         if(blocks[i] < (blocks[0] - val)) blocks[i + 1]++;
     }
 }
@@ -39,7 +40,8 @@ void __bigint_common<__num_blocks, __block_t, __sign_enable>::operator-=(const b
     for (int i = 0 ; i < __num_blocks - 1 ; i++)
     {
         blocks[i] -= val;
-
+        
+        // check if overflow happened
         if(blocks[i] > (blocks[0] + val)) blocks[i + 1]--;
     }
 }
