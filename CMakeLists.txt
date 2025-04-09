@@ -20,7 +20,7 @@ if(NOT TARGET qcl)
         COMMAND git commit -a -m "Quick Commit"
         COMMAND git gc
         VERBATIM
-        COMMENT "Committed all changes" 
+        COMMENT "Committing all changes" 
     )
 
 endif()
@@ -32,7 +32,7 @@ if(NOT TARGET qc)
         COMMAND git push 
         VERBATIM
         DEPENDS qcl
-        COMMENT "All commits pushed"
+        COMMENT "Pushing commits"
     )
 
 endif()
